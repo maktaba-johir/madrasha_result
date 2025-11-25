@@ -7,46 +7,193 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Kalpurush&display=swap" rel="stylesheet">
     <style>
         body {font-family:'Hind Siliguri','Kalpurush',sans-serif;background:linear-gradient(135deg,#e8f5e8,#fff3e0);margin:0;padding:15px 20px;color:#1a1a1a;}
-        h1 {text-align:center;font-size:38px;line-height:1.3;color:#1b5e20;background:linear-gradient(90deg,#2e7d32,#66bb6a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;padding:10px 0;margin:0 0 25px 0;}
-        .container {max-width:1300px;margin:0 auto;}
+        .container {max-width:1300px;margin:0 auto;position:relative;}
+
+        /* হেডার – লোগো + শিরোনাম পাশাপাশি */
+        .header {
+            display:flex;
+            align-items:center;
+            justify-content:flex-start;
+            gap:15px;
+            margin-bottom:25px;
+            flex-wrap:wrap;
+        }
+        .header .logo img {
+            width:80px;
+            height:auto;
+            border-radius:50%;
+            box-shadow:0 4px 15px rgba(0,0,0,0.2);
+            border:3px solid white;
+        }
+        .header h1 {
+            flex:1;
+            text-align:center;
+            font-size:36px;
+            line-height:1.3;
+            color:#1b5e20;
+            background:linear-gradient(90deg,#2e7d32,#66bb6a);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            margin:0;
+            padding:5px 0;
+        }
+
         .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;}
         .card {background:white;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.12);text-align:center;border:4px solid #43a047;transition:0.35s;}
         .card:hover {transform:translateY(-10px);box-shadow:0 18px 45px rgba(67,164,71,0.3);}
         .card h2 {background:linear-gradient(45deg,#2e7d32,#4caf50);color:white;padding:18px 10px;font-size:24px;margin:0;font-weight:bold;}
         .card a {display:block;padding:25px 15px;font-size:21px;color:#1b5e20;text-decoration:none;font-weight:600;}
         .card a:hover {background:#e8f5e8;color:#1b5e20;}
-        .footer {text-align:center;margin:50px 0 20px;font-size:19px;color:#2e7d32;line-height:1.8;}
+
+        /* যোগাযোগ সেকশন */
+        .contact-section {
+            margin:60px 0 30px;
+            background:white;
+            padding:25px;
+            border-radius:18px;
+            box-shadow:0 8px 25px rgba(0,0,0,0.1);
+            border:3px solid #43a047;
+            text-align:center;
+        }
+        .contact-section h3 {
+            color:#1b5e20;
+            font-size:24px;
+            margin-bottom:18px;
+        }
+        .contact-person {
+            margin:18px 0;
+            font-size:18px;
+            line-height:1.7;
+            padding:10px;
+            border-bottom:1px dashed #ddd;
+        }
+        .contact-person:last-child {border-bottom:none;}
+        .contact-person b {color:#1b5e20;font-size:19px;}
+        .contact-person .role {
+            color:#2e7d32;
+            font-size:16px;
+            font-style:italic;
+            display:block;
+            margin:4px 0 8px;
+        }
+        .btn-group {
+            display:flex;
+            gap:10px;
+            justify-content:center;
+            margin-top:6px;
+            flex-wrap:wrap;
+        }
+        .btn {
+            padding:8px 16px;
+            font-size:15px;
+            border-radius:50px;
+            text-decoration:none;
+            color:white;
+            font-weight:bold;
+            transition:0.3s;
+        }
+        .btn-call {background:#1b5e20;}
+        .btn-call:hover {background:#2e7d32;transform:scale(1.05);}
+        .btn-wa {background:#25D366;}
+        .btn-wa:hover {background:#128C7E;transform:scale(1.05);}
+
+        .footer {
+            text-align:center;
+            margin:50px 0 20px;
+            font-size:19px;
+            color:#2e7d32;
+            line-height:1.8;
+        }
         .footer b {color:#1b5e20;}
+
         @media (max-width:480px) {
-            h1 {font-size:32px;}
+            .header {gap:10px;}
+            .header .logo img {width:65px;}
+            .header h1 {font-size:28px;text-align:left;padding-left:10px;}
             .card h2 {font-size:22px;padding:15px 8px;}
             .card a {font-size:20px;padding:20px 10px;}
+            .contact-section h3 {font-size:21px;}
+            .contact-person {font-size:16px;padding:8px;}
+            .contact-person b {font-size:17px;}
+            .contact-person .role {font-size:15px;}
+            .btn {padding:7px 14px;font-size:14px;}
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>২য় সাময়িক পরীক্ষার ফলাফল ১৪৪৬ হি.<br>জামি‘আতুল অলিজা ইসলামিয়া (মাদরাসা)</h1>
-        
-        <div class="grid">
-            <div class="card"><h2>মেশকাত জামাত</h2><a href="meshkat.html">রেজাল্ট দেখুন →</a></div>
-            <div class="card"><h2>জালালাইন জামাত</h2><a href="jalalain.html">রেজাল্ট দেখুন →</a></div>
-            <div class="card"><h2>শরহে বেকায়া জামাত</h2><a href="sharhe-beqaya.html">রেজাল্ট দেখুন →</a></div>
-            <div class="card"><h2>কাফিয়া জামাত</h2><a href="kafiya.html">রেজাল্ট দেখুন →</a></div>
-            <div class="card"><h2>হেদায়াতুন্নাহু জামাত</h2><a href="hedayatunnahu.html">রেজাল্ট দেখুন →</a></div>
-            <div class="card"><h2>নাহবেমীর জামাত</h2><a href="nahbemir.html">রেজাল্ট দেখুন →</a></div>
-            <div class="card"><h2>মিযান জামাত</h2><a href="mizan.html">রেজাল্ট দেখুন →</a></div>
-            <div class="card"><h2>তাইসীর জামাত</h2><a href="taisir.html">রেজাল্ট দেখুন →</a></div>
-            <div class="card"><h2>খুসূসী জামাত</h2><a href="khususi.html">রেজাল্ট দেখুন →</a></div>
+
+        <!-- হেডার – লোগো + শিরোনাম পাশাপাশি -->
+        <div class="header">
+            <div class="logo">
+                <img src="oliza_logo.png" alt="জামি‘আতুল অলিজা ইসলামিয়া">
+            </div>
+            <h1>২য় সাময়িক পরীক্ষার ফলাফল ১৪৪৬ হি.<br>জামি‘আতুল অলিজা ইসলামিয়া (মাদরাসা)</h1>
         </div>
-        
+       
+        <div class="grid">
+            <div class="card"><h2>মেশকাত জামাত</h2><a href="meshkat.html">রেজাল্ট দেখুন</a></div>
+            <div class="card"><h2>জালালাইন জামাত</h2><a href="jalalain.html">রেজাল্ট দেখুন</a></div>
+            <div class="card"><h2>শরহে বেকায়া জামাত</h2><a href="sharhe-beqaya.html">রেজাল্ট দেখুন</a></div>
+            <div class="card"><h2>কাফিয়া জামাত</h2><a href="kafiya.html">রেজাল্ট দেখুন</a></div>
+            <div class="card"><h2>হেদায়াতুন্নাহু জামাত</h2><a href="hedayatunnahu.html">রেজাল্ট দেখুন</a></div>
+            <div class="card"><h2>নাহবেমীর জামাত</h2><a href="nahbemir.html">রেজাল্ট দেখুন</a></div>
+            <div class="card"><h2>মিযান জামাত</h2><a href="mizan.html">রেজাল্ট দেখুন</a></div>
+            <div class="card"><h2>তাইসীর জামাত</h2><a href="taisir.html">রেজাল্ট দেখুন</a></div>
+            <div class="card"><h2>খুসূসী জামাত</h2><a href="khususi.html">রেজাল্ট দেখুন</a></div>
+        </div>
+
+        <!-- শিক্ষা বিভাগের যোগাযোগ -->
+        <div class="contact-section">
+            <h3>শিক্ষাবিষয়ক কোন কিছু জানতে হলে যোগাযোগ করুন:</h3>
+
+            <div class="contact-person">
+                <b>১। মুফতী আব্দুল্লাহ আল মাহদী</b>
+                <span class="role">(শুনানী, হিফজ ও নূরানী বিভাগের জন্য)</span><br>
+                মোবাইল: <a href="tel:01882707869">01882-707869</a>
+                <div class="btn-group">
+                    <a href="tel:01882707869" class="btn btn-call">কল করুন</a>
+                    <a href="https://wa.me/8801882707869" target="_blank" class="btn btn-wa">হোয়াটসঅ্যাপ</a>
+                </div>
+            </div>
+
+            <div class="contact-person">
+                <b>২। মুফতী আব্দুর রহমান</b>
+                <span class="role">(বালিকা শাখার সমস্ত রিজাল্টের জন্য)</span><br>
+                মোবাইল: <a href="tel:01609396398">01609-396398</a>
+                <div class="btn-group">
+                    <a href="tel:01609396398" class="btn btn-call">কল করুন</a>
+                    <a href="https://wa.me/8801609396398" target="_blank" class="btn btn-wa">হোয়াটসঅ্যাপ</a>
+                </div>
+            </div>
+
+            <div class="contact-person">
+                <b>৩। মাওলানা আশরাফুল ইসলাম</b>
+                <span class="role">(নাজেরা ও পুরুষ শাখার কিতাব বিভাগের জন্য)</span><br>
+                মোবাইল: <a href="tel:01822627438">01822-627438</a>
+                <div class="btn-group">
+                    <a href="tel:01822627438" class="btn btn-call">কল করুন</a>
+                    <a href="https://wa.me/8801822627438" target="_blank" class="btn btn-wa">হোয়াটসঅ্যাপ</a>
+                </div>
+            </div>
+
+            <div class="contact-person">
+                <b>কম্পিউটার অপারেটর:</b> মুফতী জহিরুল ইসলাম
+                <span class="role">(কোন প্রোগ্রামিং সমস্যার জন্য)</span><br>
+                মোবাইল: <a href="tel:01742812210">01742-812210</a>
+                <div class="btn-group">
+                    <a href="tel:01742812210" class="btn btn-call">কল করুন</a>
+                    <a href="https://wa.me/8801742812210" target="_blank" class="btn btn-wa">হোয়াটসঅ্যাপ</a>
+                </div>
+            </div>
+        </div>
+       
         <div class="footer">
             আল্লাহ তা‘আলা আমাদের সকলকে ইলমে নাফে‘ দান করুন। আমীন<br><br>
             <b>যোগাযোগ:</b> মুফতী জহিরুল ইসলাম<br>
-            কম্পিউটার অপারেটর, জামি‘আতুল অলিজা ইসলামিয়া (মাদরাসা)<br>
+            কম্পিউটার অপারেটর, জামি‘আতুল উলূম আলিয়া ইসলামিয়া মাদরাসা<br>
             মোবাইল: <b>01742-812210</b>
         </div>
     </div>
 </body>
-
 </html>
